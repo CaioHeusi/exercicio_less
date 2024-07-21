@@ -1,0 +1,106 @@
+@import 'variaveis.less';
+@import 'mapas.less';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: @font-family-base;
+}
+
+body {
+    background-color: @mapa-cores[background];
+    color: @mapa-cores[text];
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: @mapa-container[max-width];
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: @mapa-cores[primary];
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: @mapa-espacamentos[medium] 0;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-weight: bold;
+    margin-left: @mapa-espacamentos[large];
+}
+
+.menu li a {
+    color: @mapa-cores[text-light];
+    text-decoration: none;
+}
+
+section {
+    padding: @mapa-espacamentos[xlarge] 0;
+}
+
+.products {
+    margin-top: @mapa-espacamentos[large];
+    display: grid;
+    grid-template-columns: @mapa-grid[columns-3];
+    column-gap: @mapa-grid[gap-small];
+    row-gap: @mapa-grid[gap-large];
+    width: 100%;
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: @mapa-bordas[large];
+}
+
+.product-button {
+    display: block;
+    background-color: @mapa-cores[secondary];
+    color: @mapa-cores[text-light];
+    text-align: center;
+    padding: @mapa-espacamentos[small] 0;
+    border-radius: @mapa-bordas[medium];
+    margin-top: @mapa-espacamentos[small];
+    text-decoration: none;
+}
+
+.product-button:hover {
+    background-color: @mapa-cores[hover];
+}
+
+@media screen and (max-width: 1023px) {
+    .container {
+    max-width: @mapa-container[max-width-sm];
+    }
+
+    .products {
+    grid-template-columns: @mapa-grid[columns-2];
+    column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .products {
+    display: block;
+    }
+
+    .product-item {
+    margin-bottom: @mapa-espacamentos[large];
+    }
+}
